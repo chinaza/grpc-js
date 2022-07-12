@@ -21,7 +21,7 @@ export type {
   ServerWritableStream
 } from '@grpc/grpc-js';
 
-export function Server(params: ServerParams) {
+export function getServer(params: ServerParams) {
   const server = GrpcServer.getInstance(params);
 
   return {
@@ -30,7 +30,7 @@ export function Server(params: ServerParams) {
   };
 }
 
-export function Client(params: ClientParams) {
+export function getClient(params: ClientParams) {
   const { protoDir, protoOptions } = params;
   const client = new GrpcClient({
     protoDir,
